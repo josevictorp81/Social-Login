@@ -10,13 +10,13 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container" style="margin-top: 40px;">
         <div class="row">
-            <div class="col-md-3 sidebar">
-                <div class="logo_sidebar">
-                    <h2 class="logo">Login</h2>
+            <div class="col-md-3">
+                <div>
+                    <h2>Social Login</h2>
                 </div>
-                <div class="corpo_sidebar">
+                <div class="text-center">
                     <div>
                         <br>
                         <a class="btn_login" href="{% url 'login' %}">Entrar</a>
@@ -28,24 +28,24 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="area_cadastrar">
-                    <h2 class="titulo_area_cadastrar">Cadastre-se</h2>
+                <div>
+                    <h2>Cadastre-se</h2>
                     <br>
                     <br>
                     <form action="{% url 'register' %}" method="POST">
                         {% csrf_token %}
-                        {% render_field form.first_name class="input_cadastrar" placeholder="Nome" %}
+                        {% render_field form.first_name class="form-control" placeholder="Nome" %}
                         <br>
                         <br>
-                        {% render_field form.last_name class="input_cadastrar" placeholder="Sobrenome" %}
+                        {% render_field form.last_name class="form-control" placeholder="Sobrenome" %}
                         <br>
                         <br>
-                        {% render_field form.email class="input_cadastrar" placeholder="Email" %}
+                        {% render_field form.email class="form-control" placeholder="Email" %}
                         <br>
                         <br>
-                        {% render_field form.password class="input_cadastrar" placeholder="Senha" type="password" %}
+                        {% render_field form.password class="form-control" placeholder="Senha" type="password" %}
                         <br>
-                        <input class="btn_cadastrar" type="submit" value="Cadastrar">
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>
                 </div>
             </div>
